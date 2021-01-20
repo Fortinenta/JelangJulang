@@ -26,8 +26,9 @@
     <div class="col-md-3 " style="float:center">
       <div class="card mb-5" >
         <div class="row mb-1 mt-1">
-          <form class="data m-3" action="/order_input" method="post">
+          <form class="data m-3" action="/order_input" method="post" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" id="sesi" nama="sesi" value="<?= session()->get('id')?>">
             <span>Nama</span>
             <input type="text" id="nama" name="" placeholder="Nama"><br>
             <span>Email</span>
@@ -36,10 +37,9 @@
             <input type="text" id="nomor" name="" placeholder="08xxxxxxxxxxx"><br>
             <span>Bukti Pendaftaran</span>
             <div class="form-group">
-              <input type="file" name="file" required>
+              <input type="file" id="bukti" name="bukti" required>
             </div>
-
-            <input type="button" name="" value="Submit">
+            <input type="submit" name="" value="Submit">
           </form>
         </div>
 
