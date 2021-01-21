@@ -32,6 +32,6 @@ class jelangjulangModel extends Model
             'bukti' => $bukti,
             'password' => $password
         );
-        $query = DB::insert("INSERT INTO pelanggan VALUES $data");
+        DB::table('pelanggan')->insert($data);;
     }
 }

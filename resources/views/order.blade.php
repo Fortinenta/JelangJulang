@@ -23,19 +23,21 @@
 
 
   <body class="body bg-dark">
-    <div class="col-md-3 " style="float:center">
+    <div class="d-flex justify-content-center " >
       <div class="card mb-5" >
-        <div class="row mb-1 mt-1">
-          <form class="data m-3" action="/order_input" method="post" enctype="multipart/form-data">
+        <div class="row mb-1 mt-1 ">
+          <form class="data m-3 " action="/order_input" method="post" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" id="sesi" nama="sesi" value="<?= session()->get('id')?>">
-            <span>Nama</span>
-            <input type="text" id="nama" name="" placeholder="Nama"><br>
-            <span>Email</span>
-            <input type="text" id="email" name="" placeholder="example@gmail.com"><br>
-            <span>Nomor</span>
-            <input type="text" id="nomor" name="" placeholder="08xxxxxxxxxxx"><br>
-            <span>Bukti Pendaftaran</span>
+            <span>Nama</span><br>
+            <input type="text" id="nama" name="nama" placeholder="Nama"><br>
+            <span class="text-danger">@error('nama'){{$message}}@enderror</span><br>
+            <span>Email</span><br>
+            <input type="text" id="email" name="email" placeholder="example@gmail.com"><br>
+            <span class="text-danger">@error('email'){{$message}}@enderror</span><br>
+            <span>Nomor</span><br>
+            <input type="text" id="nomor" name="nomor" placeholder="08xxxxxxxxxxx"><br>
+            <span class="text-danger">@error('nomor'){{$message}}@enderror</span><br>
+            <span>Bukti Pendaftaran</span><br>
             <div class="form-group">
               <input type="file" id="bukti" name="bukti" required>
             </div>

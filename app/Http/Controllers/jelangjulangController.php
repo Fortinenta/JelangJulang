@@ -38,8 +38,16 @@ class jelangjulangController extends Controller
 
   public function input(Request $req)
   {
+
+    $req->validate([
+      'nama'=>'required',
+      'email'=>'required',
+      'nomor'=>'required | min:11',
+      'bukti'=>'required'
+    ]);
+
     $model = new jelangjulangModel();
-    $sesi = $req->sesi;
+    $sesi = session()->get('id');
     $nama = $req->nama;
     $email = $req->email;
     $nomor = $req->nomor;
