@@ -32,6 +32,22 @@ class jelangjulangModel extends Model
             'bukti' => $bukti,
             'password' => $password
         );
-        $query = DB::insert("INSERT INTO pelanggan VALUES $data");
+        DB::table('pelanggan')->insert($data);;
+    }
+
+    public function get_sesi($id_sesi){
+      $query = DB::select("SELECT * FROM sesi WHERE no_sesi = '$id_sesi'");
+      return $query;
+    }
+    public function get_pelanggan($nama, $password){
+      $query = DB::select("SELECT * FROM pelanggan WHERE nama = '$nama' AND password = '$password'");
+      return $query;
+    }
+
+    public function update_total_tiket($id,$total){
+      $num = $total-1;
+      DB::table('sesi')
+            ->where('no_sesi', $id)
+            ->update(['total' => $num]);
     }
 }

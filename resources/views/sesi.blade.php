@@ -86,7 +86,7 @@ jQuery(document).ready(function($){
               <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
               <span >{{ucwords($hari->hari)}}</span><br>
               <span >{{$hari->jam}}</span> <br>
-              <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+              <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ jQuery(document).ready(function($){
                 <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
                 <span >{{ucwords($hari->hari)}}</span><br>
                 <span >{{$hari->jam}}</span> <br>
-                <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+                <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ jQuery(document).ready(function($){
                   <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
                   <span >{{ucwords($hari->hari)}}</span><br>
                   <span >{{$hari->jam}}</span> <br>
-                  <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+                  <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
                 </div>
               </div>
 
@@ -185,7 +185,7 @@ jQuery(document).ready(function($){
                     <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
                     <span >{{ucwords($hari->hari)}}</span><br>
                     <span >{{$hari->jam}}</span> <br>
-                    <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+                    <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
                   </div>
                 </div>
 
@@ -218,7 +218,7 @@ jQuery(document).ready(function($){
                       <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
                       <span >{{ucwords($hari->hari)}}</span><br>
                       <span >{{$hari->jam}}</span> <br>
-                      <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+                      <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
                     </div>
                   </div>
 
@@ -251,7 +251,7 @@ jQuery(document).ready(function($){
                         <span> Sesi {{ucwords($hari->nama_sesi)}}</span></h6>
                         <span >{{ucwords($hari->hari)}}</span><br>
                         <span >{{$hari->jam}}</span> <br>
-                        <a href="/order/{{ $hari->no_sesi }}" class="btn btn-xs btn-info pull-right">Order</a>
+                        <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info pull-right">Order</a>
                       </div>
                     </div>
 
