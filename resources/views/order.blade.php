@@ -26,6 +26,7 @@
     <div class="d-flex justify-content-center " >
       <div class="card mb-5" >
         <div class="row mb-1 mt-1 ">
+<<<<<<< HEAD
 
           <form class="data m-3 " action="/order_input" method="post" enctype="multipart/form-data">
             @csrf
@@ -34,6 +35,10 @@
             <span>{{ucwords($detail_sesi->hari)}}</span><br>
             <span>{{ucwords($detail_sesi->jam)}}</span><br><br>
             @endforeach
+=======
+          <form class="data m-3 " action="/order_input" method="post" enctype="multipart/form-data">
+            @csrf
+>>>>>>> 94bccce53b05d902ce5b6fc876eeeedbf08eaee3
             <span>Nama</span><br>
             <input type="text" id="nama" name="nama" placeholder="Nama"><br>
             <span class="text-danger">@error('nama'){{$message}}@enderror</span><br>

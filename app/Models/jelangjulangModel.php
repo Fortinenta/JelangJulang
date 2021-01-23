@@ -33,6 +33,7 @@ class jelangjulangModel extends Model
             'password' => $password
         );
         DB::table('pelanggan')->insert($data);;
+<<<<<<< HEAD
     }
 
     public function get_sesi($id_sesi){
@@ -49,5 +50,7 @@ class jelangjulangModel extends Model
       DB::table('sesi')
             ->where('no_sesi', $id)
             ->update(['total' => $num]);
+=======
+>>>>>>> 94bccce53b05d902ce5b6fc876eeeedbf08eaee3
     }
 }

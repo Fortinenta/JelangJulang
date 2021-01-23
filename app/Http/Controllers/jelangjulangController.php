@@ -38,7 +38,12 @@ class jelangjulangController extends Controller
       ->with('sesi',$sesi);
   }
 
+<<<<<<< HEAD
   public function input(Request $req){
+=======
+  public function input(Request $req)
+  {
+>>>>>>> 94bccce53b05d902ce5b6fc876eeeedbf08eaee3
 
     $req->validate([
       'nama'=>'required',
@@ -49,7 +54,10 @@ class jelangjulangController extends Controller
 
     $model = new jelangjulangModel();
     $sesi = session()->get('id');
+<<<<<<< HEAD
     $total = session()->get('total');
+=======
+>>>>>>> 94bccce53b05d902ce5b6fc876eeeedbf08eaee3
     $nama = $req->nama;
     $email = $req->email;
     $nomor = $req->nomor;
