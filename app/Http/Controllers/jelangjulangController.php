@@ -39,7 +39,6 @@ class jelangjulangController extends Controller
     return view('order')
       ->with('sesi', $sesi);
   }
-
   public function input(Request $req)
   {
     $req->validate([
@@ -68,7 +67,6 @@ class jelangjulangController extends Controller
     //memanggil model untuk insert ke db
     $model->registrasi($nama, $email, $nomor, $sesi, $bukti, $status, $password);
     //return ke view rincian_order dengan ngirim sesi dan data order
-    $model = new jelangjulangModel();
     $model->update_total_tiket($sesi, $total);
     $sesi = $model->get_sesi($sesi);
     $user = $model->get_pelanggan($nama, $password);

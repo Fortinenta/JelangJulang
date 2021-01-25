@@ -32,7 +32,7 @@ class jelangjulangModel extends Model
             'bukti' => $bukti,
             'password' => $password
         );
-        DB::table('pelanggan')->insert($data);;
+        DB::table('pelanggan')->insert($data);
     }
     public function get_sesi($id_sesi)
     {
