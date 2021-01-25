@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/daftar', [jelangjulangController::class, 'fisrt']);
-Route::get('order/{id}',[jelangjulangController::class,'order']);
-Route::post('order_input',[jelangjulangController::class,'input']);
+Route::get('order/{id}/{total}', [jelangjulangController::class, 'order'])->name('post.show');
+Route::post('order_input', [jelangjulangController::class, 'input']);
+Route::get('/absen/{id}', [jelangjulangController::class, 'absen']);
