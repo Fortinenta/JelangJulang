@@ -8,103 +8,126 @@ use Illuminate\Support\Facades\DB;
 
 class jelangjulangModel extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-//check
-    public function sesi($hari)
-    {
-        $query = DB::select("SELECT * FROM sesi WHERE hari = '$hari'");
-        return $query;
+  //check, query DB untuk mencari tiket dengan hari tertentu
+  public function sesi($hari)
+  {
+    $query = DB::select("SELECT * FROM sesi WHERE hari = '$hari'");
+    return $query;
+  }
+
+  //check, query DB untuk registrasi
+  public function registrasi($nama, $email, $nomor, $sesi, $bukti, $status, $password)
+  {
+    $data = array(
+      'no_pendaftaran' => NULL,
+      'nama' => $nama,
+      'email' => $email,
+      'nomor' => $nomor,
+      'pekerjaan' => NULL,
+      'usia' => NULL,
+      'jeniskelamin' => NULL,
+      'pendidikan' => NULL,
+      'komunitas' => NULL,
+      'sesi' => $sesi,
+      'statuskehadiran' => $status,
+      'bukti' => $bukti,
+      'password' => $password
+    );
+    DB::table('pelanggan')->insert($data);;
+  }
+
+  //check, query DB untuk memanggil sesi tiket
+  public function get_sesi($id_sesi)
+  {
+    $query = DB::select("SELECT * FROM sesi WHERE no_sesi = '$id_sesi'");
+    return $query;
+  }
+
+  //check, memanggil data pelanggan saat login
+  public function get_pelanggan($nama, $password)
+  {
+    $query = DB::select("SELECT * FROM pelanggan WHERE nama = '$nama' AND password = '$password'");
+    return $query;
+  }
+
+  //check, merubah total tiket setelah registrasi
+  public function update_total_tiket($id, $total)
+  {
+    $num = $total - 1;
+    DB::table('sesi')
+      ->where('no_sesi', $id)
+      ->update(['total' => $num]);
+  }
+
+  //check, memanggil data saat pelanggan sukses login
+  public function login($no, $password)
+  {
+    $query = DB::select("SELECT * FROM pelanggan WHERE no_pendaftaran = '$no' AND password = '$password'");
+
+    if ($query == null) {
+      return false;
     }
+    return $query;
+  }
 
-//check
-    public function registrasi($nama, $email, $nomor, $sesi, $bukti, $status, $password)
-    {
-        $data = array(
-            'no_pendaftaran' => NULL,
-            'nama' => $nama,
-            'email' => $email,
-            'nomor' => $nomor,
-            'pekerjaan' => NULL,
-            'usia' => NULL,
-            'jeniskelamin' => NULL,
-            'pendidikan' => NULL,
-            'komunitas' => NULL,
-            'sesi' => $sesi,
-            'statuskehadiran' => $status,
-            'bukti' => $bukti,
-            'password' => $password
-        );
-        DB::table('pelanggan')->insert($data);;
-    }
+  //memanggil sesi login
+  public function get_sesi_login($no)
+  {
+    $query = DB::select("SELECT status, hari, jam FROM sesi join pelanggan on sesi = no_sesi WHERE no_pendaftaran = '$no'");
+    return $query;
+  }
 
-//check
-    public function get_sesi($id_sesi){
-      $query = DB::select("SELECT * FROM sesi WHERE no_sesi = '$id_sesi'");
-      return $query;
-    }
-
-
-//check
-    public function get_pelanggan($nama, $password){
-      $query = DB::select("SELECT * FROM pelanggan WHERE nama = '$nama' AND password = '$password'");
-      return $query;
-    }
-
-//check
-    public function update_total_tiket($id,$total){
-      $num = $total-1;
-      DB::table('sesi')
-            ->where('no_sesi', $id)
-            ->update(['total' => $num]);
-    }
-
-
-//check
-    public function login($no, $password){
-      $query = DB::select("SELECT * FROM pelanggan WHERE no_pendaftaran = '$no' AND password = '$password'");
-
-      if ($query == null) {
+  // memanggil tuple untuk mengecek data diri sudah di update atau belum 
+  public function get_element($no, $password)
+  {
+    $query = DB::select("SELECT jeniskelamin FROM pelanggan WHERE no_pendaftaran = '$no' AND password = '$password'");
+    foreach ($query as $qu) {
+      if ($qu->jeniskelamin == null) {
         return false;
       }
-      return $query;
+      return true;
     }
+  }
 
-    public function get_sesi_login($no){
-      $query = DB::select("SELECT status, hari, jam FROM sesi join pelanggan on sesi = no_sesi WHERE no_pendaftaran = '$no'");
-      return $query;
-    }
+  //check, mengupdate data diri
+  public function updatedatadiri($pekerjaan, $usia, $jeniskelamin, $pendidikan, $komunitas, $no_pendaftaran, $datadiri)
+  {
+    DB::table('pelanggan')
+      ->where('no_pendaftaran', $no_pendaftaran)
+      ->update(
+        [
+          'pekerjaan' => $pekerjaan,
+          'usia' => $usia,
+          'jeniskelamin' => $jeniskelamin,
+          'pendidikan' => $pendidikan,
+          'komunitas' => $komunitas,
+          'datadiri' => $datadiri
+        ]
+      );
+  }
 
-    public function get_element($no,$password){
-      $query = DB::select("SELECT jeniskelamin FROM pelanggan WHERE no_pendaftaran = '$no' AND password = '$password'");
-      foreach ($query as $qu) {
-        if ($qu->jeniskelamin == null) {
-          return false;
-        }
-        return true;
-      }
+  //memanggil data diri pelanggan dengan no pendaftaran tertentu
+  public function get_desk($no)
+  {
+    $query = DB::select("SELECT * FROM pelanggan WHERE no_pendaftaran = '$no'");
+    return $query;
+  }
 
-    }
+  //check in user
+  public function check_in($no_pendaftaran)
+  {
+    $query = DB::table('pelanggan')
+      ->where('no_pendaftaran', $no_pendaftaran)
+      ->update(['statuskehadiran' => 'Check In']);
+  }
 
-//check
-    public function updatedatadiri($pekerjaan, $usia, $jeniskelamin, $pendidikan, $komunitas, $no_pendaftaran)
-    {
-        DB::table('pelanggan')
-            ->where('no_pendaftaran', $no_pendaftaran)
-            ->update(
-                [
-                    'pekerjaan' => $pekerjaan,
-                    'usia' => $usia,
-                    'jeniskelamin' => $jeniskelamin,
-                    'pendidikan' => $pendidikan,
-                    'komunitas' => $komunitas
-                ]
-            );
-    }
-
-    public function get_desk($no){
-      $query = DB::select("SELECT * FROM pelanggan WHERE no_pendaftaran = '$no'");
-      return $query;
-
-    }
+  //check out user
+  public function check_out($no_pendaftaran)
+  {
+    $query = DB::table('pelanggan')
+      ->where('no_pendaftaran', $no_pendaftaran)
+      ->update(['statuskehadiran' => 'Check Out']);
+  }
 }
