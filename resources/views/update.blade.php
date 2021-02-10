@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/logo.png">
-    <title>Jelang Julang</title>
+    <title>JELANG JULANG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -31,7 +31,7 @@
          <div class="col-sm-6 brand" >
             <div class="brand-img" >
                   @foreach ($user as $pelanggan)
-                  <a href="#" class="logo">UPDATE <span>.</span></a>
+                  <a href="#" class="logo">JELANG JULANG <span>.</span></a>
                   <div class="brand-text">
                   <p class="p1">Nama</p>
                   <p class="p2">{{ucwords($pelanggan->nama)}}</p><br>
@@ -58,13 +58,13 @@
                   <input type="text" id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" required>
                </p>
                <p class="p3">Usia<br>
-                  <input type="text" id="usia" name="usia" placeholder="Umur" required>
+                  <input type="text" id="usia" name="usia" placeholder="20" required>
                </p>
                <p class="p3">Jenis Kelamin<br>
                   <input type="text" id="jeniskelamin" name="jeniskelamin" placeholder="Laki-laki / Perempuan" required>
                </p>
                <p class="p3">Pendidikann<br>
-               <input type="text" id="pendidikan" name="pendidikan" placeholder="Sedang atau Terakhir Ditempuh" required>
+               <input type="text" id="pendidikan" name="pendidikan" placeholder="S1 xxxxx" required>
                </p>
                <p class="p3">Pendidikann<br>
                <input type="text" id="komunitas" name="komunitas" placeholder="Komunitas" required>

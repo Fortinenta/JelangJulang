@@ -15,7 +15,7 @@
 
   <style>
   body {
-    font-family: 'Nunito';
+    font-family: "Montserrat", sans-serif;
   }
   </style>
 
@@ -30,7 +30,8 @@
   .owl-carousel .item {
     background: #4DC7A0;
     padding: 1rem;
-	position: relative;
+  position: relative;
+  
   }
   .owl-carousel .item h4 {
     color: #FFF;
@@ -318,7 +319,7 @@ jQuery(document).ready(function($){
             </div>
 </div>
 	<div class="m-3 text-grey text-center">
-		<p>JelangJulang 2021</p>
+		<p>&copy; JelangJulang 2021</p>
     </div>
 </div>
 

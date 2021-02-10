@@ -19,7 +19,7 @@
   }
   .shadow {
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-	position: relative;
+	  position: relative;
     width: 100%;
     padding-right: .75rem;
     padding-left: .75rem;

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/logo.png">
-    <title>Jelang Julang</title>
+    <title>LOGIN JELANG JULANG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -55,8 +55,8 @@
                 <input type="submit" value="Login">
                </div>
                <br>
-            <span class="text-danger">{!! Session::has('msg') ? Session::get("msg") : '' !!}</span><br>
-            <!-- {!! Session::has('msg') ? Session::get("msg") : '' !!} -->
+            <span class="text-danger">@error('password'){{$message}}@enderror</span><br>
+            {!! Session::has('msg') ? Session::get("msg") : '' !!}
             </form>
          </div><!-- End Login Form -->
 

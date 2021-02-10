@@ -52,6 +52,85 @@ section#formHolder {
   padding: 50px 0;
 }
 
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: auto;
+  align-items:center;
+  max-height:400px;
+  max-width: 330px;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(1)}
+  to {-webkit-transform:scale(2)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0.4)}
+  to {transform:scale(1)}
+}
+
+@-webkit-keyframes zoom-out {
+  from {transform:scale(1)}
+  to {transform:scale(0)}
+}
+@keyframes zoom-out {
+  from {transform:scale(1)}
+  to {transform:scale(0)}
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+ }
+
+ .out {
+ animation-name: zoom-out;
+ animation-duration: 0.6s;
+ }
+
+ /* 100% Image Width on Smaller Screens */
+ @media only screen and (max-width: 700px){
+  .modal-content {
+      width: 100%;
+  }
+ }
+
 .brand {
   padding: 30px;
   background: url(https://goo.gl/A0ynht);
@@ -61,7 +140,7 @@ section#formHolder {
   min-height: 525px;
   position: relative;
   transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995);
-  z-index: 9999;
+  z-index: 90;
 }
 
 .brand .brand-img{
@@ -82,7 +161,7 @@ section#formHolder {
   min-height: 350px;
   position: relative;
   transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995);
-  z-index: 9999;
+  z-index: 90;
   margin-top: 50px;
   margin-bottom: 50px;
 }
