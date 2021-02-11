@@ -21,24 +21,33 @@ class jelangjulangController extends Controller
   public function fisrt()
   {
     $model = new jelangjulangModel();
+    $sabtu1 = $model->sesi('sabtu, 20');
+    $minggu1 = $model->sesi('minggu, 21');
     $senin = $model->sesi('senin');
     $selasa = $model->sesi('selasa');
     $rabu = $model->sesi('rabu');
     $kamis = $model->sesi('kamis');
     $jumat = $model->sesi('jumat');
-    $sabtu = $model->sesi('sabtu');
+    $sabtu2 = $model->sesi('sabtu, 27');
+    $minggu2 = $model->sesi('minggu, 28');
     return view('sesi')
+      ->with('sabtu1', $sabtu1)
+      ->with('minggu1', $minggu1)
       ->with('senin', $senin)
       ->with('selasa', $selasa)
       ->with('rabu', $rabu)
       ->with('kamis', $kamis)
       ->with('jumat', $jumat)
-      ->with('sabtu', $sabtu);
+      ->with('sabtu2', $sabtu2)
+      ->with('minggu2', $minggu2);
   }
 
   //check, memilih tiket
   public function order($id, $total)
   {
+    if($total == 0) {
+      return redirect()->back()->with('error','Tidak bisa memilih tiket karena stok sudah habis');
+    }
     $model = new jelangjulangModel();
     $sesi = $model->get_sesi($id);
     session(['id' => $id]);

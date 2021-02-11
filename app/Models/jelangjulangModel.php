@@ -13,7 +13,7 @@ class jelangjulangModel extends Model
   //check, query DB untuk mencari tiket dengan hari tertentu
   public function sesi($hari)
   {
-    $query = DB::select("SELECT * FROM sesi WHERE hari = '$hari'");
+    $query = DB::select("SELECT * FROM sesi WHERE hari like '%$hari%'");
     return $query;
   }
 

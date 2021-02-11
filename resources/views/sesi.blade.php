@@ -97,7 +97,11 @@
       })
     })
   </script>
-
+  @if(\Session::has('error'))
+  <div class="alert alert-success">
+    {!!\Session::get('error')!!}
+  </div>
+  @endif
   <div class="all">
 
     <header class="masthead">
@@ -111,13 +115,77 @@
     <div class="row">
       <!-- ------------------------------------------------------------------------------------------------------- -->
       <!-- sabtu,20 Maret -->
-
+      <div class="col-lg-6 mb-4">
+        <div class="card shadow mb-4">
+          <div class="m-3 text-dark text-center">
+            <h1>Sabtu, 20 Maret 2021</h1>
+          </div>
+          <!-- ........................................................................................................................... -->
+          <div class="owl-carousel owl-theme mt-5">
+            @foreach ($sabtu1 as $hari)
+            <div class="item">
+              <div class="card">
+                <div class="row mb-1 mt-1">
+                  <div class="col-s ml-3">
+                    <small> Sisa Kuota : </small>
+                    <h2 class="text-left" style="color:red;">{{$hari->total}}</h2>
+                  </div>
+                  <div class="vl"></div>
+                  <div class="col ml-1">
+                    <h6>{{ucwords($hari->status)}}
+                      <br>
+                      <span> Sesi {{ucwords($hari->nama_sesi)}}</span>
+                    </h6>
+                    <span>{{ucwords($hari->hari)}}</span><br>
+                    <span>{{$hari->jam}}</span> <br>
+                    <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info float-right">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <br>
+        </div>
+      </div>
 
 
       <!-- end -->
       <!-- ------------------------------------------------------------------------------------------------------- -->
       <!-- minggu,21 Maret -->
-
+      <div class="col-lg-6 mb-4">
+        <div class="card shadow mb-4">
+          <div class="m-3 text-dark text-center">
+            <h1>Minggu, 21 Maret 2021</h1>
+          </div>
+          <!-- ........................................................................................................................... -->
+          <div class="owl-carousel owl-theme mt-5">
+            @foreach ($minggu1 as $hari)
+            <div class="item">
+              <div class="card">
+                <div class="row mb-1 mt-1">
+                  <div class="col-s ml-3">
+                    <small> Sisa Kuota : </small>
+                    <h2 class="text-left" style="color:red;">{{$hari->total}}</h2>
+                  </div>
+                  <div class="vl"></div>
+                  <div class="col ml-1">
+                    <h6>{{ucwords($hari->status)}}
+                      <br>
+                      <span> Sesi {{ucwords($hari->nama_sesi)}}</span>
+                    </h6>
+                    <span>{{ucwords($hari->hari)}}</span><br>
+                    <span>{{$hari->jam}}</span> <br>
+                    <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info float-right">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <br>
+        </div>
+      </div>
 
 
       <!-- end -->
@@ -126,7 +194,7 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Senin</h1>
+            <h1>Senin, 22 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
@@ -164,7 +232,7 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Selasa</h1>
+            <h1>Selasa, 23 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
@@ -203,7 +271,7 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Rabu</h1>
+            <h1>Rabu, 24 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
@@ -242,7 +310,7 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Kamis</h1>
+            <h1>Kamis, 25 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
@@ -281,7 +349,7 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Jumat</h1>
+            <h1>Jumat, 26 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
@@ -320,11 +388,11 @@
       <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
           <div class="m-3 text-dark text-center">
-            <h1>Sabtu</h1>
+            <h1>Sabtu, 27 Maret 2021</h1>
           </div>
           <!-- ........................................................................................................................... -->
           <div class="owl-carousel owl-theme mt-5">
-            @foreach ($sabtu as $hari)
+            @foreach ($sabtu2 as $hari)
             <div class="item">
               <div class="card">
                 <div class="row mb-1 mt-1">
@@ -356,7 +424,39 @@
       <!-- end -->
       <!-- ------------------------------------------------------------------------------------------------------- -->
       <!-- Minggu, 28 Maret -->
-
+      <div class="col-lg-6 mb-4">
+        <div class="card shadow mb-4">
+          <div class="m-3 text-dark text-center">
+            <h1>Minggu, 28 Maret 2021</h1>
+          </div>
+          <!-- ........................................................................................................................... -->
+          <div class="owl-carousel owl-theme mt-5">
+            @foreach ($minggu2 as $hari)
+            <div class="item">
+              <div class="card">
+                <div class="row mb-1 mt-1">
+                  <div class="col-s ml-3">
+                    <small> Sisa Kuota : </small>
+                    <h2 class="text-left" style="color:red;">{{$hari->total}}</h2>
+                  </div>
+                  <div class="vl"></div>
+                  <div class="col ml-1">
+                    <h6>{{ucwords($hari->status)}}
+                      <br>
+                      <span> Sesi {{ucwords($hari->nama_sesi)}}</span>
+                    </h6>
+                    <span>{{ucwords($hari->hari)}}</span><br>
+                    <span>{{$hari->jam}}</span> <br>
+                    <a href="{{route('post.show',['id'=>$hari->no_sesi, 'total'=>$hari->total])}}" class="btn btn-xs btn-info float-right">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <br>
+        </div>
+      </div>
 
 
       <!-- end -->
