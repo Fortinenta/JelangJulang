@@ -53,10 +53,10 @@
 
                <!-- Login Form -->
                <div class="login form-peice">
-                  <form class="login-form" action="/update" method="post">
+                  <form class="login-form" action="/update" method="post" enctype="multipart/form-data">
                      @csrf
                      <p class="p3">Foto KTP / KTM / Kartu Pelajar
-                        <input type="file" id="bukti" name="bukti" required>
+                        <input type="file" id="datadiri" name="datadiri" required>
                      </p>
                      <p class="p3">Pekerjaan
                         <input type="text" id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" required>
