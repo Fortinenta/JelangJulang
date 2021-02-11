@@ -43,7 +43,7 @@
                 <div class="form-group">
                   <i class="fas fa-book"></i>
                   <input class="myInput" placeholder="{{ucwords(($pelanggan->no_pendaftaran)+20210320)}}" readonly value="">
-                  <?php $nomor =(($pelanggan->no_pendaftaran)+20210320); ?>
+                  <?php $nomor = (($pelanggan->no_pendaftaran) + 20210320); ?>
                 </div>
                 @endforeach
               </form>
@@ -71,17 +71,17 @@
                   <br><br><br><br>
                   <p>Selanjutnya untuk mendapatkan tiket silahkan klik disini!</p>
                   @foreach ($sesi as $detail_sesi)
-                    @if($detail_sesi->status=='workshop a' || $detail_sesi->status=='workshop b' || $detail_sesi->status=='workshop c' || $detail_sesi->status=='workshop d' || $detail_sesi->status=='workshop e')
-                      <a href="https://api.whatsapp.com/send?phone=6282139824717&text=hai%20saya%20ingin%20mendapatkan%20tiket%20jelangjulang%20dengan%20nomor%20pendaftaran%20{{$nomor}}">
-                      <input type="button" class="button" value="TIKET">
-                      </a>
-                    @else  
-                      <a href="https://api.whatsapp.com/send?phone=6285100636145&text=hai%20saya%20ingin%20mendapatkan%20tiket%20jelangjulang%20dengan%20nomor%20pendaftaran%20{{$nomor}}">
-                      <input type="button" class="button" value="TIKET">
-                      </a>
-                    @endif
+                  @if($detail_sesi->status=='workshop a' || $detail_sesi->status=='workshop b' || $detail_sesi->status=='workshop c' || $detail_sesi->status=='workshop d' || $detail_sesi->status=='workshop e')
+                  <a href="https://api.whatsapp.com/send?phone=6282332914329&text=hai%20saya%20ingin%20mendapatkan%20tiket%20jelangjulang%20dengan%20nomor%20pendaftaran%20{{$nomor}}">
+                    <input type="button" class="button" value="TIKET">
+                  </a>
+                  @else
+                  <a href="https://api.whatsapp.com/send?phone=6285100636145&text=hai%20saya%20ingin%20mendapatkan%20tiket%20jelangjulang%20dengan%20nomor%20pendaftaran%20{{$nomor}}">
+                    <input type="button" class="button" value="TIKET">
+                  </a>
+                  @endif
                   @endforeach
-                  
+
 
                 </div>
               </div>
