@@ -80,7 +80,7 @@
         <b>Sabtu, 20 Maret 2021</b> <br>
         <div class="row">
           <div class="col">
-            <p>Sesi 1 07.00-14.00</p>
+            <p>Sesi 1 08.00-12.00</p>
             <i>
               <span> Workshop A - Kalung Kuningan </span>
               <span>Workshop B - Shibori itajime arashi </span>
@@ -90,7 +90,7 @@
             </i>
           </div>
           <div class="col">
-            <p>Sesi 2 15.00-20.00</p>
+            <p>Sesi 2 15.00-16.00</p>
             <i>
               <span>Workshop A - Shibori itajime arashi </span>
               <span>Workshop B - Kalung Kuningan </span>
@@ -104,7 +104,7 @@
         <b>Minggu, 21 Maret 2021</b> <br>
         <div class="row">
           <div class="col">
-            <p>Sesi 1 07.00-14.00</p>
+            <p>Sesi 1 08.00-12.00</p>
             <i>
               <span>Workshop A - Batik Pewarna</span>
               <span>Workshop B - Ecoprint Kain</span>
@@ -114,7 +114,7 @@
             </i>
           </div>
           <div class="col">
-            <p>Sesi 2 15.00-20.00</p>
+            <p>Sesi 2 13.00-16.00</p>
             <i>
               <span>Workshop A - Batik Pewarna</span>
               <span>Workshop B - Ecoprint Kain</span>
@@ -128,7 +128,7 @@
         <b>Sabtu, 27 Maret 2021</b> <br>
         <div class="row">
           <div class="col">
-            <p>Sesi 1 07.00-14.00</p>
+            <p>Sesi 1 08.00-12.00</p>
             <i>
               <span>Workshop A - Ecoprint Kulit</span>
               <span>Workshop B - Rotan Sintetis</span>
@@ -138,7 +138,7 @@
             </i>
           </div>
           <div class="col">
-            <p>Sesi 2 15.00-20.00</p>
+            <p>Sesi 2 13.00-16.00</p>
             <i>
               <span>Workshop A - Ecoprint Kulit</span>
               <span>Workshop B - Rotan Sintetis</span>
@@ -152,7 +152,7 @@
         <b>Minggu, 28 Maret 2021</b> <br>
         <div class="row">
           <div class="col">
-            <p>Sesi 1 07.00-14.00</p>
+            <p>Sesi 1 08.00-12.00</p>
             <i>
               <span>Workshop A - Rusty Dye </span>
               <span>Workshop B - Jahit Perca</span>
@@ -162,7 +162,7 @@
             </i>
           </div>
           <div class="col">
-            <p>Sesi 2 15.00-20.00</p>
+            <p>Sesi 2 13.00-16.00</p>
             <i>
               <span>Workshop A - Rusty Dye </span>
               <span>Workshop B - Jahit Perca</span>
