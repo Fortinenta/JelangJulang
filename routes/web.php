@@ -34,7 +34,11 @@ Route::get('/admin', function () {
 });
 Route::post('/admin', [jelangjulangController::class, 'admin']);
 Route::get('/pelanggan', [jelangjulangController::class, 'pelanggan'])->name('pelanggan');
+
+// ------------------------------------------------------------------------------------------
+//Pending Route
+// ------------------------------------------------------------------------------------------
 //menampilkan data diri pelanggan untuk dicek oleh staff panitia
-Route::get('/info/{id}', [jelangjulangController::class, 'info']);
-Route::get('/checkin/{id}', [jelangjulangController::class, 'checkin'])->name('checkin');
-Route::get('/checkout/{id}', [jelangjulangController::class, 'checkout'])->name('checkout');
+// Route::get('/info/{id}', [jelangjulangController::class, 'info']);
+// Route::get('/checkin/{id}', [jelangjulangController::class, 'checkin'])->name('checkin');
+// Route::get('/checkout/{id}', [jelangjulangController::class, 'checkout'])->name('checkout');
