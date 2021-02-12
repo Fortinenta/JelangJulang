@@ -15,7 +15,7 @@ use App\Http\Controllers\jelangjulangController;
 
 //memesan tiket
 Route::get('/', [jelangjulangController::class, 'home']);
-Route::get('/daftar', [jelangjulangController::class, 'fisrt']);
+Route::get('/daftar', [jelangjulangController::class, 'fisrt'])->name('daftar');
 Route::get('order/{id}/{total}', [jelangjulangController::class, 'order'])->name('post.show');
 Route::post('order_input', [jelangjulangController::class, 'input']);
 //login update data diri

@@ -52,6 +52,14 @@ class jelangjulangModel extends Model
     return $query;
   }
 
+
+  //check total tiket
+  public function total($id){
+    $query = DB::select("SELECT * FROM sesi WHERE no_sesi = '$id'");
+    foreach ($query as $qu) {
+      return $qu->total;
+    }
+  }
   //check, merubah total tiket setelah registrasi
   public function update_total_tiket($id, $total)
   {

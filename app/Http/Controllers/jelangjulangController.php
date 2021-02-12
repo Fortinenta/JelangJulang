@@ -45,10 +45,13 @@ class jelangjulangController extends Controller
   //check, memilih tiket
   public function order($id, $total)
   {
-    if($total == 0) {
+    
+    $model = new jelangjulangModel();
+    $total_tiket= $model->total($id);
+    // dd($total_tiket);
+    if($total_tiket == 0) {
       return redirect()->back()->with('error','Tidak bisa memilih tiket karena stok sudah habis');
     }
-    $model = new jelangjulangModel();
     $sesi = $model->get_sesi($id);
     session(['id' => $id]);
     session(['total' => $total]);
@@ -65,8 +68,13 @@ class jelangjulangController extends Controller
       'nomor' => 'required | min:11',
       'bukti' => 'required | mimes:jpg,jpeg,png'
     ]);
-    $model = new jelangjulangModel();
     $sesi = session()->get('id');
+    $model = new jelangjulangModel();
+    $total_tiket= $model->total($sesi);
+    // dd($total_tiket);
+    if($total_tiket == 0) {
+      return redirect()->route('daftar')->with('error','Tidak bisa memilih tiket karena stok sudah habis');
+    }
     $total = session()->get('total');
     $nama = $req->nama;
     $email = $req->email;
