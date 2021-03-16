@@ -8,7 +8,7 @@
 </head>
 <body>
     @foreach($pelanggan as $data)
-        <h3>{{ucwords($data->no_pendaftaran)}}</h3>
+        <h3>{{(20210320+$data->no_pendaftaran)}}</h3>
         <h3>{{ucwords($data->nama)}}</h3>
         <h3>{{ucwords($data->email)}}</h3>
         <h3>{{ucwords($data->nomor)}}</h3>
@@ -19,7 +19,13 @@
         <h3>{{ucwords($data->komunitas)}}</h3>
         <h3>{{ucwords($data->sesi)}}</h3>
         <h3>{{ucwords($data->statuskehadiran)}}</h3>
-        <img source="public/datadiri/{{$data->datadiri}}">
+        <img src="{{ URL::asset("images/datadiri/$data->datadiri") }}" height="120" width="130">
+            <a href="{{route('checkin',['id'=>$data->no_pendaftaran])}}">
+                <input type="button" class="button" value="Check In">
+            </a>
+            <a href="{{route('checkout',['id'=>$data->no_pendaftaran])}}">
+                <input type="button" class="button" value="Check Out">
+            </a>
     @endforeach
 </body>
 </html>

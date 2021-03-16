@@ -39,6 +39,6 @@ Route::get('/pelanggan', [jelangjulangController::class, 'pelanggan'])->name('pe
 //Pending Route
 // ------------------------------------------------------------------------------------------
 //menampilkan data diri pelanggan untuk dicek oleh staff panitia
-Route::get('/info/{id}', [jelangjulangController::class, 'info']);
+Route::get('/info/{id}', [jelangjulangController::class, 'info'])->name('info');
 Route::get('/checkin/{id}', [jelangjulangController::class, 'checkin'])->name('checkin');
 Route::get('/checkout/{id}', [jelangjulangController::class, 'checkout'])->name('checkout');
