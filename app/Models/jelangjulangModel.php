@@ -54,7 +54,8 @@ class jelangjulangModel extends Model
 
 
   //check total tiket
-  public function total($id){
+  public function total($id)
+  {
     $query = DB::select("SELECT * FROM sesi WHERE no_sesi = '$id'");
     foreach ($query as $qu) {
       return $qu->total;
@@ -137,5 +138,19 @@ class jelangjulangModel extends Model
     $query = DB::table('pelanggan')
       ->where('no_pendaftaran', $no_pendaftaran)
       ->update(['statuskehadiran' => 'Check Out']);
+  }
+
+  //get deskripsi pengrajin
+  public function get_pengrajin($id)
+  {
+    $query = DB::select("SELECT * FROM pengrajin WHERE id_pengrajin = '$id'");
+    return $query;
+  }
+
+  //get katalog image
+  public function get_katalog($id, $karya)
+  {
+    $query = DB::select("SELECT * FROM karya WHERE id_pengrajin = '$id' AND foto_ke = '$karya'");
+    return $query;
   }
 }

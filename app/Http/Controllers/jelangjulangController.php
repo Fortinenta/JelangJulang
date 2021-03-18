@@ -239,4 +239,26 @@ class jelangjulangController extends Controller
     $pelanggan = $model->get_desk($id);
     return view('info')->with('pelanggan', $pelanggan);
   }
+  public function katalog($id)
+  {
+    $model = new jelangjulangModel();
+    $pengrajin = $model->get_pengrajin($id);
+    $katalog1 = $model->get_katalog($id, 1);
+    $katalog2 = $model->get_katalog($id, 2);
+    $katalog3 = $model->get_katalog($id, 3);
+    $katalog4 = $model->get_katalog($id, 4);
+    $katalog5 = $model->get_katalog($id, 5);
+    $katalog6 = $model->get_katalog($id, 6);
+    $katalog7 = $model->get_katalog($id, 7);
+    // dd($pengrajin);
+    return view('katalog')->with('pengrajin', $pengrajin)
+      ->with('ke1', $katalog1)
+      // ->with('ke2', $katalog2)
+      // ->with('ke3', $katalog3)
+      // ->with('ke4', $katalog4)
+      // ->with('ke5', $katalog5)
+      // ->with('ke6', $katalog6)
+      // ->with('ke7', $katalog7)
+    ;
+  }
 }
